@@ -1,0 +1,141 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .bg_img {
+    background-image: url('images/home.png'); 
+    background-size: cover;
+    background-position:center; 
+    background-repeat: no-repeat; 
+    animation: zoomOut 2s infinite alternate; 
+  }
+  
+  @keyframes zoomOut {
+    0% {
+      background-size: 100% 100%;
+    }
+    100% {
+      background-size: 200% 200%; /* Final background size (zoomed out) */
+    }
+  }
+  
+  
+  body {
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent horizontal scrollbars */
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+  }
+  
+  @keyframes animateBackground {
+    0% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(50%);
+    }
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .fixed-bottom{
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+
+  }
+
+
+  .container2 {
+    max-width: 1200px;
+    margin: 200px auto 0;
+    text-align: center;/* Center align the text */
+    font-family: "Bahnschrift SemiBold", sans-serif; /* Use Bahnschrift SemiBold font */
+  }
+  
+  /* Example of how to apply this class to an HTML element */
+  .container2 p {
+    font-family: "Bahnschrift SemiBold", sans-serif; /* Apply the font to paragraphs within .container2 */
+  }
+  
+  .menu{
+    text-align: center;
+    font-family: "Bahnschrift SemiBold", sans-serif;
+  }
+
+  .menu li a {
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for text color */
+  }
+  
+  .menu li a:hover {
+    color: #ff7f50; /* Change text color on hover */
+  }
+  
+  .heading{
+    text-align: center;
+    font-family: "Bahnschrift SemiBold", sans-serif;
+    font-size: 250%;
+    margin: 20px auto 20px;
+  }
