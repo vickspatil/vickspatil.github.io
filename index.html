@@ -1,42 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | ECE Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #3B82F6, #14B8A6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
-<body>
-  <div class="bg_img">
-    <!-- the fucking background image never works properly -->
-  <header>
-    <div class="container1">
-      <h1 class="heading">Welcome to My Portfolio</h1>
-      <nav>
-        
-        <ul class="menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About Me</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="https://github.com/vickspatil?tab=projects">Projects</a></li>
-          <li><a href="Venkatesh Patil.pdf" download>Download Resume</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<body class="bg-slate-50">
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">Portfolio</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                    <a href="#about" class="hover:text-blue-600 transition">About</a>
+                    <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                    <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#home" class="hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <section class="hero">
-    <div class="container2">
-      <h2>Hello, I'm Venkatesh Annasaheb Patil</h2>
-      <p>Welcome to my portfolio website. Here, you'll find information about me and my projects</p>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 md:pt-32 pb-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                        Hi, I'm <span class="gradient-text">Venkatesh Patil</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8">
+                        Electronics & Communication Engineering, I love everything that carries a current!
 
-  <div class="container">
-    <p class="fixed-bottom">&copy; 2024 Venkatesh Annasaheb Patil</p>
-  </div>
+                    </p>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                            Contact Me
+                        </a>
+                        <a href="#projects" class="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-50 transition">
+                            View Projects
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 mt-12 md:mt-0">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80" 
+                         alt="Electronics Project" 
+                         class="rounded-lg shadow-xl max-w-md mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
-</body>
-</div>
-</html>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-6 rounded-lg shadow-sm">
+                    <i class="bi bi-cpu text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Technical Skills</h3>
+                    <p class="text-gray-600">Proficient in machine learning, deep learning, computer vision, data science, and P2P networking.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg shadow-sm">
+                    <i class="bi bi-laptop text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Software</h3>
+                    <p class="text-gray-600">Experienced with MATLAB, Arduino IDE, Python, and web technologies like HTML, CSS, and databases.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-lg shadow-sm">
+                    <i class="bi bi-people text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Soft Skills</h3>
+                    <p class="text-gray-600">Strong problem-solving skills, teamwork, and excellent communication in English, Hindi, Kannada, and Marathi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Cards -->
+                <div class="project-card bg-white rounded-xl shadow-sm overflow-hidden">
+                    <img src="D:\Hackfest2\WEbPage\img.jpeg" 
+                         alt="Project 1" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">AI HealthBot</h3>
+                        <p class="text-gray-600 mb-4">Developed a health chatbot for advisory solutions using symptom analysis, trained on medical textbooks.</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700">Learn more →</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl shadow-sm overflow-hidden">
+                    <img src="D:\Capstone\Cancer\IMG\carcinoma_M\scc_1 (4).jpg" 
+                         alt="Project 2" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Cervical Cancer Detection</h3>
+                        <p class="text-gray-600 mb-4">Final year project utilizing computer vision and deep learning for early carcinogenic cell detection.</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700">Learn more →</a>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl shadow-sm overflow-hidden">
+                    <img src="C:\Users\Venkatesh Patil\Downloads\Untitled design.jpg" 
+                         alt="Project 3" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">P2P Networking for Disasters</h3>
+                        <p class="text-gray-600 mb-4">Created a P2P network system to enable survivor communication during natural disasters.</p>
+                        <a href="#" class="text-blue-600 hover:text-blue-700">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="max-w-lg mx-auto">
+                <form class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Name</label>
+                        <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Message</label>
+                        <textarea class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none h-32" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue
